@@ -1,14 +1,14 @@
 config:
   environments:
     node:
-      target: 'http://localhost:5555/node'
+      target: 'http://localhost:5555/node/heavy'
       plugins:
         statsd:
           host: localhost
           port: 8125
           prefix: "artillery-node"
     gunicorn:
-      target: 'http://localhost:5555/gunicorn'
+      target: 'http://localhost:5555/gunicorn/heavy'
       plugins:
         statsd:
           host: localhost
@@ -18,19 +18,22 @@ config:
   pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
 
   phases:
-    - name: Start
-      duration: 10
-      arrivalRate: 0
-    - name: Ramp
+    - name: "Warm up the application"
       duration: 30
-      arrivalRate: 5
-      rampTo: 30
-    - name: Plain
-      duration: 120
-      arrivalRate: 30
-    - name: Stop
-      duration: 10
-      arrivalRate: 0
+      arrivalRate: 1
+      rampTo: 3
+    - name: "Sustained max load"
+      duration: 30
+      arrivalRate: 3
+    - name: "Start overloading"
+      duration: 30
+      arrivalRate: 3
+      rampTo: 4
+    - name: "Sustained overloading"
+      duration: 30
+      arrivalRate: 4
+    - name: "Clear"
+      pause: 30
     
 
 scenarios:
