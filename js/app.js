@@ -3,7 +3,7 @@ var crypto = require("crypto");
 const express = require('express');
 
 const PORT = 3000;
-const TIMEOUT = 1000;
+const TIMEOUT = 245;
 const ID = crypto.randomBytes(4).toString('hex');
 const app = express();
 

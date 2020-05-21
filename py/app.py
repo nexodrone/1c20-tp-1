@@ -3,7 +3,7 @@ import time
 from flask import Flask
 from datetime import datetime
 
-TIMEOUT = 1
+TIMEOUT = 0.245
 app = Flask(__name__)
 
 @app.route("/")
