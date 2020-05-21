@@ -18,23 +18,19 @@ config:
   pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
 
   phases:
-    - name: "Warm up the application"
-      duration: 30
-      arrivalRate: 1
-      rampTo: 3
-    - name: "Sustained max load"
+    - name: "Clear start"
+      pause: 30
+    - name: "3 rps"
       duration: 30
       arrivalRate: 3
-    - name: "Start overloading"
-      duration: 30
-      arrivalRate: 3
-      rampTo: 4
-    - name: "Sustained overloading"
+    - name: "4 rps"
       duration: 30
       arrivalRate: 4
-    - name: "Clear"
-      pause: 30
-    
+    - name: "5 rps"
+      duration: 30
+      arrivalRate: 5
+    - name: "Clear end"
+      pause: 30    
 
 scenarios:
   - name: Root (/)
