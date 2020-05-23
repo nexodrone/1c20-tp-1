@@ -20,15 +20,15 @@ config:
   phases:
     - name: "Clear start"
       pause: 30
-    - name: "3 rps"
+    - name: "11 rps"
       duration: 30
-      arrivalRate: 3
-    - name: "4 rps"
+      arrivalRate: 11
+    - name: "12 rps"
       duration: 30
-      arrivalRate: 4
-    - name: "5 rps"
+      arrivalRate: 12
+    - name: "13 rps"
       duration: 30
-      arrivalRate: 5
+      arrivalRate: 13
     - name: "Clear end"
       pause: 30    
 
