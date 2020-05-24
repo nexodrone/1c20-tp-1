@@ -1,0 +1,34 @@
+config:
+  environments:
+    node:
+      target: 'http://localhost:5555/node/ping'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node"
+    gunicorn:
+      target: 'http://localhost:5555/gunicorn/ping'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-gunicorn"
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    - name: "Clear start"
+      pause: 30
+    - name: "Ramp"
+      duration: 120
+      arrivalRate: 0
+      rampTo: 100
+    - name: "Clear end"
+      pause: 30   
+
+scenarios:
+  - name: Root (/)
+    flow:
+      - get:
+          url: '/'
