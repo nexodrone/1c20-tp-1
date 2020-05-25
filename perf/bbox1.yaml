@@ -1,0 +1,39 @@
+config:
+  environments:
+    serv-0:
+      target: 'http://localhost:9090/1c20-tp1_bbox_1'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-bbox0"
+    serv-1:
+      target: 'http://localhost:9091/1c20-tp1_bbox_1'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-bbox1"
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    - name: "Clear start"
+      pause: 30
+    - name: "3 rps"
+      duration: 30
+      arrivalRate: 3
+    - name: "4 rps"
+      duration: 30
+      arrivalRate: 4
+    - name: "5 rps"
+      duration: 30
+      arrivalRate: 5
+    - name: "Clear end"
+      pause: 30    
+
+scenarios:
+  - name: Root (/)
+    flow:
+      - get:
+          url: '/'
