@@ -1,14 +1,14 @@
 config:
   environments:
     node:
-      target: 'http://localhost:5555/node/ping'
+      target: 'http://localhost:5555/node/timeout'
       plugins:
         statsd:
           host: localhost
           port: 8125
           prefix: "artillery-node"
     gunicorn:
-      target: 'http://localhost:5555/gunicorn/ping'
+      target: 'http://localhost:5555/gunicorn/timeout'
       plugins:
         statsd:
           host: localhost
@@ -20,10 +20,9 @@ config:
   phases:
     - name: "Clear start"
       pause: 30
-    - name: "Ramp"
+    - name: "300 rps"
       duration: 120
-      arrivalRate: 0
-      rampTo: 100
+      arrivalRate: 300
     - name: "Clear end"
       pause: 30
 
