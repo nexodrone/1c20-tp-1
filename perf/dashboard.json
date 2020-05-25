@@ -487,9 +487,14 @@
             "selected": false,
             "text": "artillery-gunicorn",
             "value": "artillery-gunicorn"
+          },
+          {
+            "selected": false,
+            "text": "artillery-bbox0",
+            "value": "artillery-bbox0"
           }
         ],
-        "query": "artillery-node, artillery-gunicorn",
+        "query": "artillery-node, artillery-gunicorn, artillery-bbox0",
         "type": "custom"
       },
       {
@@ -543,9 +548,14 @@
             "selected": false,
             "text": "1c20-tp-1_nginx_1",
             "value": "1c20-tp-1_nginx_1"
+          },
+          {
+            "selected": false,
+            "text": "1c20-tp-1_bbox_1",
+            "value": "1c20-tp-1_bbox_1"
           }
         ],
-        "query": "1c20-tp-1_node_1, 1c20-tp-1_node_2, 1c20-tp-1_node_3, 1c20-tp-1_cadvisor_1, 1c20-tp-1_grafana_1, 1c20-tp-1_graphite_1, 1c20-tp-1_gunicorn_1, 1c20-tp-1_nginx_1",
+        "query": "1c20-tp-1_node_1, 1c20-tp-1_node_2, 1c20-tp-1_node_3, 1c20-tp-1_cadvisor_1, 1c20-tp-1_grafana_1, 1c20-tp-1_graphite_1, 1c20-tp-1_gunicorn_1, 1c20-tp-1_nginx_1, 1c20-tp-1_bbox_1",
         "type": "custom"
       }
     ]
