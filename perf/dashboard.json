@@ -492,9 +492,14 @@
             "selected": false,
             "text": "artillery-bbox0",
             "value": "artillery-bbox0"
+          },
+          {
+            "selected": false,
+            "text": "artillery-bbox1",
+            "value": "artillery-bbox1"
           }
         ],
-        "query": "artillery-node, artillery-gunicorn, artillery-bbox0",
+        "query": "artillery-node, artillery-gunicorn, artillery-bbox0, artillery-bbox1",
         "type": "custom"
       },
       {

@@ -20,17 +20,67 @@ config:
   phases:
     - name: "Clear start"
       pause: 30
-    - name: "3 rps"
+    - name: "*** 2 rps ***"
+      duration: 30
+      arrivalRate: 2
+    - name: "*** 3 rps ***"
       duration: 30
       arrivalRate: 3
-    - name: "4 rps"
+    - name: "*** 4 rps ***"
       duration: 30
       arrivalRate: 4
-    - name: "5 rps"
+    - name: "*** 5 rps ***"
       duration: 30
       arrivalRate: 5
+    - name: "*** 6 rps ***"
+      duration: 30
+      arrivalRate: 6
+    - name: "*** 7 rps ***"
+      duration: 30
+      arrivalRate: 7
+    - name: "*** 8 rps ***"
+      duration: 30
+      arrivalRate: 8
+    - name: "*** 9 rps ***"
+      duration: 30
+      arrivalRate: 9
+    - name: "*** 10 rps ***"
+      duration: 30
+      arrivalRate: 10
+    - name: "*** 11 rps ***"
+      duration: 30
+      arrivalRate: 11
+    - name: "*** 12 rps ***"
+      duration: 30
+      arrivalRate: 12
+    - name: "*** 13 rps ***"
+      duration: 30
+      arrivalRate: 13
+    - name: "*** 14 rps ***"
+      duration: 30
+      arrivalRate: 14
+    - name: "*** 15 rps ***"
+      duration: 30
+      arrivalRate: 15
+    - name: "*** 16 rps ***"
+      duration: 30
+      arrivalRate: 16
+    - name: "*** 17 rps ***"
+      duration: 30
+      arrivalRate: 17
+    - name: "*** 18 rps ***"
+      duration: 30
+      arrivalRate: 18
+    - name: "*** 19 rps ***"
+      duration: 30
+      arrivalRate: 19
+    - name: "*** 20 rps ***"
+      duration: 30
+      arrivalRate: 20
+
+
     - name: "Clear end"
-      pause: 30    
+      pause: 30
 
 scenarios:
   - name: Root (/)
